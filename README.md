@@ -45,18 +45,18 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 
-#Project name
+# Project name
 
-##Table of contents
-- [Introduction](#Introduction)
+## Table of contents
+- [Introduction](#introduction)
 - Requirements
 - Installation
 - Configuration
 
-##Introduction
+<h2 id="introduction">Introduction</h2>
 
-##Requirements
+## Requirements
 
-##Installation
+## Installation
 
-##Configuration
+## Configuration
