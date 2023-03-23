@@ -32,7 +32,7 @@ export default function TransactionsMain() {
 		dispatch(fetchTransactions({ items_per_page: 6, page: 1 }));
 	}, [dispatch]);
 
-	if (!data.length && status === STATUS.PENDING) {
+	if (!data || !data.length && status === STATUS.PENDING) {
 		return <Preloader/>
 	}
 

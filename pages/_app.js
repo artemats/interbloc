@@ -1,6 +1,7 @@
-import 'styles/styles.scss';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
+
+import 'styles/styles.scss';
 /*
 Components
  */

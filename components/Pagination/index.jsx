@@ -1,13 +1,22 @@
+import Link from 'next/link';
 import PropTypes from 'prop-types';
-/*
-Icons
- */
 import ArrowShortIcon from '~ui/icons/ArrowShort';
 
-
-
-export default function Pagination({ theme = 'default' }) {
-
+export default function Pagination({ theme = 'default', active = 1, total = 10, limit, url }) {
+	
+	const pages = Math.ceil(Number(total) / Number(limit));
+	let items = [];
+	
+	for (let number = 1; number <= pages; number++) {
+		items.push(
+			<div className="pagination-item" key={number}>
+				<Link href={`/transactions/?page=${number}`} className={`pagination-link ${number === Number(active) ? 'is-active' : ''}`}>
+					<a>{number}</a>
+				</Link>
+			</div>
+		)
+	}
+	
 	if (theme === 'rounded') {
 		return (
 			<div className="pagination pagination-rounded">
@@ -42,21 +51,7 @@ export default function Pagination({ theme = 'default' }) {
 				</a>
 			</div>
 			<div className="pagination-list">
-				<div className="pagination-item">
-					<a className="pagination-link is-active" href="#">1</a>
-				</div>
-				<div className="pagination-item">
-					<a className="pagination-link" href="#">2</a>
-				</div>
-				<div className="pagination-item">
-					<a className="pagination-link" href="#">3</a>
-				</div>
-				<div className="pagination-item">
-					<a className="pagination-link" href="#">4</a>
-				</div>
-				<div className="pagination-item">
-					<a className="pagination-link" href="#">5</a>
-				</div>
+				{items}
 			</div>
 			<div className="pagination-item __next">
 				<a className="pagination-link pagination-link-arrow" href="#">
