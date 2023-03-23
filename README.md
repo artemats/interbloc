@@ -49,14 +49,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Table of contents
 - [Introduction](#introduction)
-- Requirements
-- Installation
-- Configuration
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
 
 <h2 id="introduction">Introduction</h2>
 
-## Requirements
+<h2 id="requirements">Requirements</h2>
 
-## Installation
+<h2 id="installation">Installation</h2>
 
-## Configuration
+<h2 id="configuration">Configuration</h2>
