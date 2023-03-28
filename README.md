@@ -28,7 +28,7 @@ npm version: 7.13.0
 ```bash
 npm install
 # or
-yarn insall
+yarn install
 ```
 
 <h2 id="getting-started">Getting Started</h2>
