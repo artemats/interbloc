@@ -4,7 +4,7 @@ import getRandomFloat from '~utils/random/gerRandomFloat';
 import getRandomAge from '~utils/random/getRandomAge';
 import getRandomTransactionMethod from '~utils/random/getRandomTransactionMethod';
 import db from '~utils/db/db';
-import Transaction from '../../../../models/Transaction';
+import Transaction from '../../../models/Transaction';
 import { ObjectId } from 'mongodb';
 
 async function handler(req, res) {

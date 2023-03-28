@@ -29,7 +29,7 @@ yarn start
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `pages/transactions.js`. The page auto-updates as you edit the file.
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
@@ -47,16 +47,52 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 # Project name
 
+####Side - Front-end
+####Station - Office
+####PM - PMs name
+
 ## Table of contents
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Getting Started](#getting-started)
 - [Configuration](#configuration)
 
 <h2 id="introduction">Introduction</h2>
 
 <h2 id="requirements">Requirements</h2>
 
+node version: 16.1.0
+
+npm version: 7.13.0
+
 <h2 id="installation">Installation</h2>
+
+```bash
+npm install
+# or
+yarn insall
+```
+
+<h2 id="getting-started">Getting Started</h2>
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Second, run the production server:
+```bash
+npm install
+npm run build
+npm start
+# or
+yarn
+yarn build
+yarn start
+```
 
 <h2 id="configuration">Configuration</h2>

@@ -17,7 +17,7 @@ export default function TransactionsPage({ transactions }) {
 			value: getRandomFloat(2000, 3000, 2),
 			percentage: getRandomFloat(1,2,2)
 		})
-	}, [transactions])
+	}, [])
 	
 	return (
 		<>
@@ -44,10 +44,11 @@ export default function TransactionsPage({ transactions }) {
 							<div className="col-6">
 								<div className="d-flex justify-content-end">
 									<Pagination
+										theme="rounded"
 										total={transactions.total}
 										active={transactions.currentPage}
 										limit={transactions.limit}
-										url={`/transactions`}/>
+										url="/transactions"/>
 								</div>
 							</div>
 						</div>
@@ -73,7 +74,7 @@ export default function TransactionsPage({ transactions }) {
 							transactions.data.map((option, index) => (
 								<tr key={index}>
 									<td>
-										<Link href={`${routes.public.transactions}/${option.hash}`}>
+										<Link href={`${routes.public.transactions}/${option.id}`}>
 											<a>
 												<Button icon color="transparent">
 													<EyeIcon/>
@@ -97,7 +98,7 @@ export default function TransactionsPage({ transactions }) {
 										<span className="font-book font-hash">{option.from}</span>
 									</td>
 									<td>
-										<Link href={`${routes.public.transactions}/${option.hash}`}>
+										<Link href={`${routes.public.transactions}/${option.id}`}>
 											<a>
 												<Button>
 													<ArrowIcon/>

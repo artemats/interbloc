@@ -10,7 +10,7 @@ export default function Pagination({ theme = 'default', active = 1, total = 10, 
 	for (let number = 1; number <= pages; number++) {
 		items.push(
 			<div className="pagination-item" key={number}>
-				<Link href={`/transactions/?page=${number}`} className={`pagination-link ${number === Number(active) ? 'is-active' : ''}`}>
+				<Link href={`${url}/?page=${number}`} className={`pagination-link ${number === Number(active) ? 'is-active' : ''}`}>
 					<a>{number}</a>
 				</Link>
 			</div>
@@ -21,23 +21,31 @@ export default function Pagination({ theme = 'default', active = 1, total = 10, 
 		return (
 			<div className="pagination pagination-rounded">
 				<div className="pagination-item __first">
-					<a className="pagination-link" href="#">First</a>
+					<Link href={`${url}/?page=${1}`}>
+						<a className="pagination-link">First</a>
+					</Link>
 				</div>
 				<div className="pagination-list">
 					<div className="pagination-item __prev">
-						<a className="pagination-link pagination-link-arrow" href="#">
-							<ArrowShortIcon/>
-						</a>
+						<Link href={`${url}/?page=${Math.max(1, ( Number(active) - 1 ))}`}>
+							<a className={`pagination-link pagination-link-arrow ${Number(active) === 1 ? 'disabled' : ''}`}>
+								<ArrowShortIcon/>
+							</a>
+						</Link>
 					</div>
-					<span className="color-grey font-secondary-bold">Page 1 of 10000</span>
+					<span className="color-grey font-secondary-bold">Page {active} of {pages}</span>
 					<div className="pagination-item __next">
-						<a className="pagination-link pagination-link-arrow" href="#">
-							<ArrowShortIcon/>
-						</a>
+						<Link href={`${url}/?page=${Math.min(pages, ( Number(active) + 1 ))}`}>
+							<a className={`pagination-link pagination-link-arrow ${Number(active) === pages ? 'disabled' : ''}`}>
+								<ArrowShortIcon/>
+							</a>
+						</Link>
 					</div>
 				</div>
 				<div className="pagination-item __last">
-					<a className="pagination-link" href="#">Last</a>
+					<Link href={`${url}/?page=${pages}`}>
+						<a className="pagination-link" href="#">Last</a>
+					</Link>
 				</div>
 			</div>
 		)

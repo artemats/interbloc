@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import TransactionsPage from '~routes/Transactions';
 import TransactionModel from '../../models/Transaction';
+import db from '~utils/db/db';
 
 export default function Transactions({ transactions }) {
 	
@@ -14,9 +15,11 @@ export default function Transactions({ transactions }) {
 	)
 }
 
-export async function getServerSideProps({ query, req }) {
+export async function getServerSideProps(req) {
 	
-	const { page = 1, limit = 10 } = query;
+	const { page = 1, limit = 10 } = req.query;
+	
+	await db.dbConnect();
 	
 	const transactions = await TransactionModel.find()
 		.limit(limit)
