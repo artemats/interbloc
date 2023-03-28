@@ -47,9 +47,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 # Project name
 
-####Side - Front-end
-####Station - Office
-####PM - PMs name
+Side - Front-end
+
+Station - Office
+
+PM - PMs name
 
 ## Table of contents
 - [Introduction](#introduction)
