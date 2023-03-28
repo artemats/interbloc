@@ -1,17 +1,15 @@
-# Project name
+# Interbloc
 
-Side - Front-end
+**Side - Front-end**
 
-Station - Office
-
-PM - PMs name
+**Station - Office**
 
 ## Table of contents
-- [Introduction](#introduction)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Configuration](#configuration)
+- **[Introduction](#introduction)**
+- **[Requirements](#requirements)**
+- **[Installation](#installation)**
+- **[Getting Started](#getting-started)**
+- **[Configuration](#configuration)**
 
 <h2 id="introduction">Introduction</h2>
 
