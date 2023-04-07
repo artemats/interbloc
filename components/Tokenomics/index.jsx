@@ -1,76 +1,52 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useMemo } from 'react';
 import NumberFormat from 'react-number-format';
 import Plot from 'react-plotly.js';
-/*
-Store
- */
-import {fetchTokenomics, selectTokenomics} from '~store/slices/getTokenomicsSlice';
-/*
-Components
- */
-import Preloader from '~ui/components/Preloader';
-import ErrorBlock from '~ui/components/Error';
-/*
-Utils
- */
+import getRandomInt from '~utils/random/getRandomInt';
 import {isEmptyObject} from '~utils/object/detectEmptyObject';
-/*
-Config
- */
-import {STATUS} from '~config/constants';
 import { styles } from '~config/chart';
 
-
-
 export default function Tokenomics() {
-
-	const dispatch = useDispatch();
-	const { data, status } = useSelector(selectTokenomics);
-
-	useEffect(() => {
-		dispatch(fetchTokenomics());
-	}, [dispatch]);
-
-	if (isEmptyObject(data) && status === STATUS.PENDING) {
-		return <Preloader/>
-	}
-
-	if (!isEmptyObject(data) && status === STATUS.FULFILLED) {
-
-		const { supply, bonded, unbonding } = data;
-		let boundedPercent = parseFloat(( ( bonded * 100 ) / supply ).toFixed(2));
-		let unBoundedPercent = parseFloat(( ( unbonding * 100 ) / supply ).toFixed(2));
-		let boundedPercentFake = ( boundedPercent / 100 ) * 50;
-		let unBoundedPercentFake = ( unBoundedPercent / 100 ) * 50;
-		const values = [boundedPercentFake, unBoundedPercentFake, 50];
-
+	
+	const token = useMemo(() => {
+		const bonded = getRandomInt(50000000, 100000000);
+		const unbonded = getRandomInt(10000000, 50000000);
+		const supply = bonded + unbonded;
+		
+		const boundedPercent = parseFloat(( ( bonded * 100 ) / supply ).toFixed(2));
+		const unBoundedPercent = parseFloat(( ( unbonded * 100 ) / supply ).toFixed(2));
+		const boundedPercentFake = ( boundedPercent / 100 ) * 50;
+		const unBoundedPercentFake = ( unBoundedPercent / 100 ) * 50;
+		
+		return { supply, bonded, unbonded, boundedPercent, unBoundedPercent, boundedPercentFake, unBoundedPercentFake }
+	}, [])
+	
+	if (!isEmptyObject(token)) {
 		return (
 			<>
 				<div className="row">
 					<div className="col-6">
 						<p className="color-grey font-bold">Bonded:</p>
 						<NumberFormat
-							value={bonded}
+							value={token.bonded}
 							displayType="text"
 							thousandSeparator={true}
 							renderText={(value, props) => {
 								return <p className="font-16 font-secondary-bold color-orange" {...props}>{value}</p>
 							}}/>
 						<p className="color-grey font-secondary-bold font-12">BTSG</p>
-						<p className="mt-2">{boundedPercent.toFixed(2)} %</p>
+						<p className="mt-2">{token.boundedPercent.toFixed(2)} %</p>
 					</div>
 					<div className="col-6">
 						<p className="color-grey font-bold">Unbonded:</p>
 						<NumberFormat
-							value={unbonding}
+							value={token.unbonded}
 							displayType="text"
 							thousandSeparator={true}
 							renderText={(value, props) => {
 								return <p className="font-16 font-secondary-bold color-violet" {...props}>{value}</p>
 							}}/>
 						<p className="color-grey font-secondary-bold font-12">BTSG</p>
-						<p className="mt-2">{unBoundedPercent.toFixed(2)} %</p>
+						<p className="mt-2">{token.unBoundedPercent.toFixed(2)} %</p>
 					</div>
 				</div>
 				<div className="row">
@@ -79,7 +55,7 @@ export default function Tokenomics() {
 							<Plot
 								data={[
 									{
-										values,
+										values: [token.boundedPercentFake, token.unBoundedPercentFake, 50],
 										labels: ['', '', ''],
 										type: 'pie',
 										rotation: 90,
@@ -130,7 +106,7 @@ export default function Tokenomics() {
 					</div>
 					<div className="col-4">
 						<NumberFormat
-							value={supply}
+							value={token.supply}
 							displayType="text"
 							thousandSeparator={true}
 							renderText={(value, props) => {
@@ -141,6 +117,6 @@ export default function Tokenomics() {
 			</>
 		)
 	}
-
-	return <ErrorBlock/>
+	
+	return null
 }

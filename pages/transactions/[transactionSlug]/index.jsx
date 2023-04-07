@@ -24,6 +24,8 @@ export async function getServerSideProps(req) {
 	
 	const transaction = await TransactionModel.findOne({ id: transactionSlug }).lean();
 	
+	await db.dbDisconnect();
+	
 	return {
 		props: {
 			transaction: JSON.parse(JSON.stringify(transaction))

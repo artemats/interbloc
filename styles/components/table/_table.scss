@@ -4,7 +4,7 @@
 		&-box{
 			background-color: var(--color-black-100);
 			border-radius: 7px;
-			padding: 25px 32px;
+			padding: 25rem 32rem;
 			/*
 			Input
 		 */
@@ -15,18 +15,18 @@
 			}
 		}
 		&-header{
-			margin-bottom: 54px;
+			margin-bottom: 54rem;
 		}
 		&-status{
 			position: relative;
 			line-height: 1em;
-			padding-left: 25px;
+			padding-left: 25rem;
 				&:before{
 					content: '';
 					position: absolute;
 					pointer-events: none;
-					width: 12px;
-					height: 12px;
+					width: 12rem;
+					height: 12rem;
 					border-radius: 2px;
 					background-color: currentColor;
 					top: 44%;
@@ -34,8 +34,8 @@
 					transform: translateY(-50%);
 				}
 				&-icon{
-					width: 18px;
-					height: 18px;
+					width: 18rem;
+					height: 18rem;
 					display: block;
 					border-radius: 2px;
 					background-color: currentColor;
@@ -47,7 +47,7 @@
 				letter-spacing: .05em;
 				color: var(--color-grey-500);
 				font-family: var(--font-base);
-				padding: 0 17px 10px;
+				padding: 0 17rem 10rem;
 			}
 		}
 		tbody{
@@ -71,14 +71,14 @@
 				}
 			}
 			th, td{
-				margin: 3px 0;
-				padding: 12px 18px;
+				margin: 3rem 0;
+				padding: 12rem 18rem;
 				position: relative;
 					&:before{
 						content: '';
 						position: absolute;
-						top: 3px;
-						bottom: 3px;
+						top: 3rem;
+						bottom: 3rem;
 						left: 0;
 						right: 0;
 						pointer-events: none;
@@ -99,7 +99,7 @@
 					& > span:not(.font-hash):not(.status){
 						display: inline-flex;
 						align-items: center;
-						min-height: 30px;
+						min-height: 30rem;
 					}
 			}
 		}
@@ -110,21 +110,21 @@
 			border-top: none;
 			vertical-align: middle;
 				.btn{
-					height: 34px;
-					line-height: 34px;
-					padding: 5px 15px;
+					height: 34rem;
+					line-height: 34rem;
+					padding: 5rem 15rem;
 					color: var(--color-primary);
 						&:hover{
 							color: var(--color-black);
 						}
 						&-theme{
 							&-icon{
-								padding: 7px;
-								width: 34px;
+								padding: 7rem;
+								width: 34rem;
 								color: var(--color-grey);
-								&:hover{
-									color: var(--color-grey);
-								}
+									&:hover{
+										color: var(--color-grey);
+									}
 							}
 						}
 				}

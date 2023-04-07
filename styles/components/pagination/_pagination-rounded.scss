@@ -1,6 +1,6 @@
 .pagination{
 	&-rounded{
-		height: 46px;
+		height: 46rem;
 			.pagination{
 				&-item{
 					margin: 0;
@@ -29,14 +29,14 @@
 							.pagination{
 									&-link{
 										height: 100%;
-										width: 124px;
+										width: 124rem;
 										background-color: var(--color-black-200);
 										border-radius: 40px;
 										letter-spacing: .05em;
 										font-family: var(--font-title-bold);
 										text-transform: uppercase;
-										line-height: 46px;
-										padding: 0 10px;
+										line-height: 46rem;
+										padding: 0 10rem;
 											&:hover{
 												background-color: var(--color-primary);
 												color: var(--color-black);
@@ -46,22 +46,22 @@
 						}
 				}
 				&-list{
-					min-width: 270px;
+					min-width: 270rem;
 					justify-content: space-between;
 					text-align: center;
 					border-radius: 40px;
 					background-color: var(--color-black-200);
 					position: relative;
-					margin: 0 12px;
+					margin: 0 12rem;
 				}
 				&-link{
 					&-arrow{
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						height: 46px;
-						width: 46px;
-						min-width: 46px;
+						height: 46rem;
+						width: 46rem;
+						min-width: 46rem;
 						border: 1px var(--color-primary) solid;
 						border-radius: 50%;
 						color: var(--color-primary);

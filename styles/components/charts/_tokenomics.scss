@@ -1,11 +1,11 @@
 .tokenomics{
 		&-chart {
-			height: 120px;
-			width: 190px;
+			height: 120rem;
+			width: 190rem;
 			position: relative;
 			overflow-y: hidden;
 			border-radius: 10px;
-			margin-bottom: 21px;
+			margin-bottom: 21rem;
 				.js-plotly-plot {
 					position: absolute;
 					top: 0;
@@ -14,6 +14,6 @@
 				}
 		}
 		&-legends {
-			padding-top: 85px;
+			padding-top: 85rem;
 		}
 }

@@ -1,10 +1,10 @@
 .box{
-	min-height: 400px;
+	min-height: 400rem;
 	border-radius: 7px;
 	position: relative;
 	background-color: var(--color-black-100);
-	margin-bottom: 32px;
-	padding: 32px;
+	margin-bottom: 32rem;
+	padding: 32rem;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -25,11 +25,11 @@
 		&-header{
 			display: flex;
 			align-items: center;
-			margin-bottom: 15px;
+			margin-bottom: 15rem;
 				&-thumb{
-					width: 64px;
-					height: 64px;
-					min-width: 64px;
+					width: 64rem;
+					height: 64rem;
+					min-width: 64rem;
 					border-radius: 50%;
 					background-color: var(--color-black-200);
 					color: var(--color-black);
@@ -37,7 +37,7 @@
 					align-items: center;
 					justify-content: center;
 						& ~ .box-header-title{
-							margin-left: 24px;
+							margin-left: 24rem;
 						}
 						&.color{
 								&-primary{
@@ -57,9 +57,9 @@
 								}
 						}
 						&.__30{
-							width: 30px;
-							height: 30px;
-							min-width: 30px;
+							width: 30rem;
+							height: 30rem;
+							min-width: 30rem;
 						}
 				}
 				&-title{
@@ -70,24 +70,24 @@
 			height: 100%;
 			width: 100%;
 				&-height{
-					height: calc(400px - 143px);
+					height: calc(400rem - 143rem);
 				}
 				&-subtitle{
-					margin-top: -10px;
+					margin-top: -10rem;
 				}
 				&-status{
 					position: absolute;
-					top: 32px;
-					right: 32px;
-					padding-right: 25px;
+					top: 32rem;
+					right: 32rem;
+					padding-right: 25rem;
 					text-transform: capitalize;
 					line-height: 1em;
 						&:before{
 							content: '';
 							position: absolute;
 							pointer-events: none;
-							width: 12px;
-							height: 12px;
+							width: 12rem;
+							height: 12rem;
 							top: 45%;
 							right: 0;
 							transform: translateY(-50%);
@@ -96,7 +96,7 @@
 						}
 				}
 				&-detail{
-					margin-top: -35px;
+					margin-top: -35rem;
 				}
 		}
 		&-adaptive{
@@ -108,7 +108,7 @@
 		Table
 		 */
 		.table{
-			margin-top: 25px;
+			margin-top: 25rem;
 				&-box{
 					padding-left: 0;
 					padding-right: 0;
@@ -118,6 +118,6 @@
 
 .governance-box{
 	.box{
-		min-height: 336px;
+		min-height: 336rem;
 	}
 }

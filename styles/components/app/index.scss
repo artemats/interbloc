@@ -1,8 +1,12 @@
+:root{
+	font-size: calc(1 * 100vw / 1920);
+}
+
 body{
 	background-color: var(--color-black);
 	color: var(--color-grey-700);
 	font-family: var(--font-base);
-	font-size: 14px;
+	font-size: 14rem;
 }
 
 strong{

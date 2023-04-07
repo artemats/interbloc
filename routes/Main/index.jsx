@@ -1,23 +1,12 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import logo from '~static/images/logo-white.png';
-/*
-Components
- */
 import Preloader from '~ui/components/Preloader';
-// import Button from '~ui/components/Button';
-/*
-Icons
- */
-import ArrowLongIcon from '~ui/icons/ArrowLong';
 import Box from '~ui/components/Box';
 import BlocksIcon from '~ui/icons/Blocks';
 import RSSIcon from '~ui/icons/RSS';
 import PhoneIcon from '~ui/icons/Phone';
 import UnionIcon from '~ui/icons/Union';
-/*
-Lazy components
- */
 const BlocksLatest = dynamic(async () => {
 	return await import('~components/BlocksLatest');
 }, { ssr: false, loading: () => <Preloader/> });
@@ -121,12 +110,12 @@ export default function MainPage() {
 			<div className="row">
 				<div className="col-xl-6">
 					<Box title="Transactions">
-						<TransactionsMain/>
+						{/*<TransactionsMain/>*/}
 					</Box>
 				</div>
 				<div className="col-xl-6">
 					<Box title="Blocks">
-						<BlocksMain/>
+						{/*<BlocksMain/>*/}
 					</Box>
 				</div>
 			</div>

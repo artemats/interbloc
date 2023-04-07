@@ -10,8 +10,8 @@ export default function Pagination({ theme = 'default', active = 1, total = 10, 
 	for (let number = 1; number <= pages; number++) {
 		items.push(
 			<div className="pagination-item" key={number}>
-				<Link href={`${url}/?page=${number}`} className={`pagination-link ${number === Number(active) ? 'is-active' : ''}`}>
-					<a>{number}</a>
+				<Link href={`${url}/?page=${number}`}>
+					<a className={`pagination-link ${number === Number(active) ? 'is-active' : ''}`}>{number}</a>
 				</Link>
 			</div>
 		)
@@ -44,7 +44,7 @@ export default function Pagination({ theme = 'default', active = 1, total = 10, 
 				</div>
 				<div className="pagination-item __last">
 					<Link href={`${url}/?page=${pages}`}>
-						<a className="pagination-link" href="#">Last</a>
+						<a className="pagination-link">Last</a>
 					</Link>
 				</div>
 			</div>
@@ -54,17 +54,21 @@ export default function Pagination({ theme = 'default', active = 1, total = 10, 
 	return (
 		<div className="pagination">
 			<div className="pagination-item __prev">
-				<a className="pagination-link pagination-link-arrow" href="#">
-					<ArrowShortIcon/>
-				</a>
+				<Link href={`${url}/?page=${Math.max(1, ( Number(active) - 1 ))}`}>
+					<a className={`pagination-link pagination-link-arrow ${Number(active) === 1 ? 'disabled' : ''}`}>
+						<ArrowShortIcon/>
+					</a>
+				</Link>
 			</div>
 			<div className="pagination-list">
 				{items}
 			</div>
 			<div className="pagination-item __next">
-				<a className="pagination-link pagination-link-arrow" href="#">
-					<ArrowShortIcon/>
-				</a>
+				<Link href={`${url}/?page=${Math.min(pages, ( Number(active) + 1 ))}`}>
+					<a className={`pagination-link pagination-link-arrow ${Number(active) === pages ? 'disabled' : ''}`}>
+						<ArrowShortIcon/>
+					</a>
+				</Link>
 			</div>
 		</div>
 	)

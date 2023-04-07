@@ -28,6 +28,8 @@ export async function getServerSideProps(req) {
 	
 	const total = await TransactionModel.find().count();
 	
+	await db.dbDisconnect();
+	
 	return {
 		props: {
 			transactions: {

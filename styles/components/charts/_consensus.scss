@@ -1,22 +1,24 @@
 .consensus-chart{
-	height: 227px;
+	height: 227rem;
+	width: 227rem;
+	margin: 0 auto;
 	position: relative;
 		&:before{
 			content: '';
 			position: absolute;
-			width: 210px;
-			height: 212px;
-			top: 22px;
+			width: calc(100% - 17rem);
+			height: calc(100% - 17rem);
+			bottom: -7rem;
 			left: 50%;
 			transform: translateX(-50%);
 			border-radius: 50%;
-			border: 24px #323232 solid;
+			border: 24rem #323232 solid;
 		}
 		&:after{
 			@extend .color-grey;
 			content: 'Validators';
 			position: absolute;
-			top: calc(50% + 30px);
+			top: calc(50% + 30rem);
 			left: 50%;
 			text-align: center;
 			transform: translate(-50%, -50%);

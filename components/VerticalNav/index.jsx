@@ -1,17 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '~static/images/logo.svg';
-/*
-Config
- */
 import routes from '~config/routes';
-/*
-Components
- */
 import VerticalNavItem from '~components/VerticalNav/VerticalNavItem';
-/*
-Icons
- */
 import HomeIcon from '~ui/icons/Home';
 import BlocksIcon from '~ui/icons/Blocks';
 import SettingsIcon from '~ui/icons/Settings';
@@ -20,8 +11,6 @@ import UserIcon from '~ui/icons/User';
 import DirectoryIcon from '~ui/icons/Directory';
 import EyeIcon from '~ui/icons/Eye';
 import BurgerIcon from '~ui/icons/Burger';
-
-
 
 export default function VerticalNav() {
 	return (

@@ -1,6 +1,13 @@
 .pagination{
 	display: inline-flex;
 	border-radius: 0;
+		
+		&:not(.pagination-rounded){
+			display: flex;
+			justify-content: center;
+			padding: 20rem 0;
+		}
+	
 		&-list{
 			display: flex;
 			align-items: center;
@@ -13,9 +20,9 @@
 			overflow: hidden;
 			display: inline-block;
 			text-align: center;
-			width: 36px;
-			height: 36px;
-			line-height: 36px;
+			width: 36rem;
+			height: 36rem;
+			line-height: 36rem;
 			border-radius: 6px;
 			font-family: var(--font-title-bold);
 			transition: background-color var(--duration) var(--ease), color var(--duration) var(--ease);
@@ -33,7 +40,7 @@
 				}
 		}
 		&-item{
-			margin: 0 6px;
+			margin: 0 6rem;
 				&.__prev{
 					transform: scaleX(-1);
 				}
